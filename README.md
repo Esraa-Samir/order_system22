@@ -25,15 +25,15 @@ python3.7
  
  
  To create a user -> curl -X POST \
-                      <pre><pre><pre>http://127.0.0.1:8000/products/ \
-                      <pre><pre><pre>-H 'Content-Type: application/json' \
-                      <pre><pre><pre>-H 'cache-control: no-cache' \
-                      <pre><pre><pre>-d '{
-                      <pre><pre><pre>"username": "user",
-                      <pre><pre><pre>"email": "user@test.com",
-                      <pre><pre><pre>"password": 123456,
-                      <pre><pre><pre>"is_admin": True // False by default 
-                    <pre><pre><pre>}' 
+                      <pre>http://127.0.0.1:8000/products/ \
+                      -H 'Content-Type: application/json' \
+                      -H 'cache-control: no-cache' \
+                      -d '{
+                      "username": "user",
+                      "email": "user@test.com",
+                      "password": 123456,
+                      "is_admin": True // False by default 
+                    }' 
 
                     
  Login -> curl -X POST \
