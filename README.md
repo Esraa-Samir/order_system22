@@ -86,7 +86,40 @@ python3.7
                       -H 'Content-Type: application/json' \
                       -H 'cache-control: no-cache' \
                       -H "Authorization: Token {token}" \
-     </pre>
+ </pre>
+ 
+ 
+
+ <pre>
+   Get_total_revenu -> curl -X GET \
+                      http://127.0.0.1:8000/purchases/profit \
+                      -H 'Content-Type: application/json' \
+                      -H 'cache-control: no-cache' \
+                      -H "Authorization: Token {token}" \
+ </pre> 
+  <pre>
+   Get_purchased_products -> curl -X GET \
+                      http://127.0.0.1:8000/purchases/history \
+                      -H 'Content-Type: application/json' \
+                      -H 'cache-control: no-cache' \
+                      -H "Authorization: Token {token}" \
+  </pre> 
+   <pre>
+   Purchase_product -> curl -X POST \
+                      http://127.0.0.1:8000/purchases/profit \
+                      -H 'Content-Type: application/json' \
+                      -H 'cache-control: no-cache' \
+                      -H "Authorization: Token {token}" \
+                      -d '{"item": "5"}' // id of purchased product
+   </pre>
+    <pre>
+   Get_all_products ->  curl -X GET \
+                      http://127.0.0.1:8000/products/available \
+                      -H 'Content-Type: application/json' \
+                      -H 'cache-control: no-cache' \
+                      -H "Authorization: Token {token}" 
+                      
+</pre>
   
 
  
