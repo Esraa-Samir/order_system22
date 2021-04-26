@@ -24,8 +24,10 @@ python3.7
  To conume any of the following API you need to be authenticated.
  
  
- To create a user -> curl -X POST \
-                      <pre>http://127.0.0.1:8000/products/ \
+ To create a user -> 
+ <pre>
+ curl -X POST \
+                      http://127.0.0.1:8000/products/ \
                       -H 'Content-Type: application/json' \
                       -H 'cache-control: no-cache' \
                       -d '{
@@ -34,7 +36,7 @@ python3.7
                       "password": 123456,
                       "is_admin": True // False by default 
                     }' 
-
+</pre>
                     
  Login -> curl -X POST \
                -H 'Content-Type: application/json' \
