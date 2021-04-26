@@ -78,6 +78,7 @@ python3.7
                       -H "Authorization: Token {token}" \
     </pre>
   
+  <pre>
    Get_products -> curl -X GET \
                       http://127.0.0.1:8000/products/ \
                       -H 'Content-Type: application/json' \
