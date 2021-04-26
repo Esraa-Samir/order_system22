@@ -23,89 +23,90 @@ python3.7
  
  To conume any of the following API you need to be authenticated.
  <pre> 
- To create a user -> 
- 
-     curl -X POST \
-     http://127.0.0.1:8000/products/ \
-     -H 'Content-Type: application/json' \
-     -H 'cache-control: no-cache' \
-     -d '{
-     "username": "user",
-     "email": "user@test.com",
-     "password": 123456,
-     "is_admin": True // False by default 
-     }' 
+ To create a user -> curl -X POST \
+                      http://127.0.0.1:8000/products/ \
+                      -H 'Content-Type: application/json' \
+                      -H 'cache-control: no-cache' \
+                      -d '{
+                      "username": "user",
+                      "email": "user@test.com",
+                      "password": 123456,
+                      "is_admin": True // False by default 
+                      }' 
+</pre>
+<pre>
+ Login -> curl -X POST \
+          -H 'Content-Type: application/json' \
+          http://127.0.0.1:8000/auth/token/login/ \
+          -d '{"username":"user@test.com","password":"123456"}'
 
- Login -> 
- 
-     curl -X POST \
-     -H 'Content-Type: application/json' \
-     http://127.0.0.1:8000/auth/token/login/ \
-     -d '{"username":"user@test.com","password":"123456"}'
-
-
+</pre>
  Login API returns a token that you can to consume the following APIs
  
- 
- Create_product ->
- 
-    curl -X POST \
-    http://127.0.0.1:8000/products/ \
-    -H 'Content-Type: application/json' \
-    -H 'cache-control: no-cache' \
-    -H "Authorization: Token {token}" \
-    -d '{
-      "name": "Iphone",
-      "description": "mobile phone",
-      "price": 1000,
-      "price_currency": "USD", // set by dafault to EGP but can be changed 
-      "is_available": True
-     }'
-                    
-  Modify_product -> 
-     curl -X PATCH \
-     http://127.0.0.1:8000/products/update/<product_id> \
-     -H 'Content-Type: application/json' \
-     -H 'cache-control: no-cache' \
-     -H "Authorization: Token {token}" \
-     -d '{
-        "name": "Iphone",
-        "description": "mobile phone",
-        "price": 2000,
-        "is_available": False
-      }' 
-                    
+ <pre>
+ Create_product -> curl -X POST \
+                   http://127.0.0.1:8000/products/ \
+                   -H 'Content-Type: application/json' \
+                   -H 'cache-control: no-cache' \
+                   -H "Authorization: Token {token}" \
+                   -d '{
+                     "name": "Iphone",
+                     "description": "mobile phone",
+                     "price": 1000,
+                     "price_currency": "USD", // set by dafault to EGP but can be changed 
+                     "is_available": True
+                    }'
+  </pre>
+  <pre>
+  Modify_product -> curl -X PATCH \
+                    http://127.0.0.1:8000/products/update/<product_id> \
+                    -H 'Content-Type: application/json' \
+                    -H 'cache-control: no-cache' \
+                    -H "Authorization: Token {token}" \
+                    -d '{
+                       "name": "Iphone",
+                       "description": "mobile phone",
+                       "price": 2000,
+                       "is_available": False
+                     }' 
+   </pre>
+   <pre>
   Delete_product -> curl -X DELETE \
                       http://127.0.0.1:8000/products/delete/<product_id> \
                       -H 'Content-Type: application/json' \
                       -H 'cache-control: no-cache' \
                       -H "Authorization: Token {token}" \
-                      
+    </pre>
+    <pre>
    Get_products -> curl -X GET \
                       http://127.0.0.1:8000/products/ \
                       -H 'Content-Type: application/json' \
                       -H 'cache-control: no-cache' \
                       -H "Authorization: Token {token}" \
-                      
+     </pre>
+     <pre>
    Get_total_revenu -> curl -X GET \
                       http://127.0.0.1:8000/purchases/profit \
                       -H 'Content-Type: application/json' \
                       -H 'cache-control: no-cache' \
                       -H "Authorization: Token {token}" \
-                      
+      </pre> 
+      <pre>
    Get_purchased_products -> curl -X GET \
                       http://127.0.0.1:8000/purchases/history \
                       -H 'Content-Type: application/json' \
                       -H 'cache-control: no-cache' \
                       -H "Authorization: Token {token}" \
-                      
+       </pre> 
+       <pre>
    Purchase_product -> curl -X POST \
                       http://127.0.0.1:8000/purchases/profit \
                       -H 'Content-Type: application/json' \
                       -H 'cache-control: no-cache' \
                       -H "Authorization: Token {token}" \
                       -d '{"item": "5"}' // id of purchased product
-                      
+        </pre>
+        <pre>
    Get_all_products ->  curl -X GET \
                       http://127.0.0.1:8000/products/available \
                       -H 'Content-Type: application/json' \
