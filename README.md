@@ -15,6 +15,8 @@ python3.7
  - Create a new virtualenv -> python3 -m venv venv
  - Activate virtual env -> /venv/Scripts/activate
  - Install required libraries -> pip install -r requirements.txt
+ - Make migrations -> python manage.py makemigrations
+ - Apply migrations -> python manage.py migrate
  - Run project -> python manage.py runserver
  
  # Consuming APIs
