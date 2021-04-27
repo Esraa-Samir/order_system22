@@ -12,7 +12,7 @@ python3.7
 
 # To run the app locally
 
- - Create a new virtualenv -> virtualenv venv
+ - Create a new virtualenv -> python3 -m venv venv
  - Activate virtual env -> /venv/Scripts/activate
  - Install required libraries -> pip install -r requirements.txt
  - Run project -> python manage.py runserver
